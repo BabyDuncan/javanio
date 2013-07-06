@@ -19,4 +19,12 @@ Buffer是包含数据的对象，channel 是获得数据的对象。通道是双
 6，NIO的基本过程
 读：首先创建一个缓冲区，然后让通道来把数据读到这个缓冲区。
 写：首先创建一个缓冲区，然后用数据填充它，然后让通道使用这些数据来执行写入操作。
+7，NIO的两个重要组件：状态变量和访问方法
+状态变量，有三个值 记录着NIO的状态，分别是:position,limit,capacity
+position : 当前指针的位置.
+limit: 当前buffer还有多少数据需要取出或者还有多少数据空余.
+capacity: buffer的大小.
+假设capacity 是10,当前position是2,那么limit就是8,如果position是7,那么limit就是3.
+
+今天读到第八页
 
