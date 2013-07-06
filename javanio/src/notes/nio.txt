@@ -1,3 +1,17 @@
 1，java 经典IO 使用字节流来传输数据，就是一个byte 一个byte的传输，java NIO 使用数据块来传输数据。
 2，按照字节流来传输数据 效率非常低，很慢，但是比较简单和容易。按照块处理数据效率高，但是比较复杂。
 3，通道（channel）和缓冲区（Buffer） 是NIO的核心对象。
+4，什么是缓冲区：
+缓冲区（buffer） 是一个对象，它包含以下将要写入或刚刚读出的数据，在NIO中，数据被直接读出或写入buffer中
+而在传统IO 中，数据被直接读出或者写入到stream中。
+任何时候 访问NIO的时候，都是从buffer中获得数据。
+缓冲区 是一个数组，可以是很多种类型的数组，一共有以下类型：
+最常见的     ByteBuffer
+还有         CharBuffer
+            ShortBuffer
+            IntBuffer
+            DoubleBuffer
+            FloatBuffer
+            LongBuffer
+四类八种基本数据类型，除了boolean 都有一个对应的Buffer。
+
