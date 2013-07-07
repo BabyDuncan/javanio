@@ -45,19 +45,20 @@ public class ByteBufferUsage {
 
         byte[] bytes = {10, 20, 30, 40, 50, 60};
         byteBuffer.clear();
-//      汉语注释
+//      这里的第二个参数和第三个参数是offset和length 是对数据来说的,bytebuffer依然按照position来读.
         byteBuffer.put(bytes, 3, 2);
         System.out.println("_____");
-        for(int i=0;i<byteBuffer.capacity();i++){
+        for (int i = 0; i < byteBuffer.capacity(); i++) {
             System.out.println(byteBuffer.get(i));
         }
 //      这里必须flip,使指针归位.
         byteBuffer.flip();
 
-        byte[] _bytes = new byte[2];
-        byteBuffer.get(_bytes, 0, 2);
+        byte[] _bytes = new byte[5];
+        //这里的第二三个参数也是按照数组来说的,bytebuffer的读写都是根据position来处理.
+        byteBuffer.get(_bytes, 3, 2);
         System.out.println("&&&");
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < _bytes.length; i++) {
             System.out.println(_bytes[i]);
         }
 
