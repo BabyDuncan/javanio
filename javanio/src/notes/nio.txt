@@ -25,6 +25,11 @@ position : 当前指针的位置.
 limit: 当前buffer还有多少数据需要取出或者还有多少数据空余.
 capacity: buffer的大小.
 假设capacity 是10,当前position是2,那么limit就是8,如果position是7,那么limit就是3.
+8,flip() 方法做两件事情:
+1,把limit设置为当前position
+2,把position设置为0
+9,clear() 方法也做两件事情:
+1,把limit设置为capacity
+2,把position设置为0
 
-今天读到第八页
 
